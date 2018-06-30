@@ -25,12 +25,19 @@ Key point:  start + 1 < end; checking inside/outside, at the end, check start/en
 1.1
 
 class Solution {
+
 public:
+
     /*
+    
      * @param nums: An integer array sorted in ascending order
+     
      * @param target: An integer
+     
      * @return: An integer
+     
      */
+     
     int findPosition(vector<int> &nums, int target) {
         // write your code here
         if (nums.size() == 0) {
@@ -64,6 +71,7 @@ public:
         return -1;
     }
 };
+
 
 ## Similar problems
 x
