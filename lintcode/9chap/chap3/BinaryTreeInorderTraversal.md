@@ -1,23 +1,22 @@
 # 67. Binary Tree Inorder Traversal
 
 ## Description
-
+~~~
 Given a binary tree, return the inorder traversal of its nodes' values.
 
 Example
 Given binary tree {1,#,2,3},
 
-   1
-    \
-     2
-    /
-   3
-
+   1  
+    \  
+     2  
+    /  
+   3  
 return [1,3,2].
 
 Challenge
 Can you do it without recursion?
-
+~~~
 Example
 Given [1, 2, 2, 4, 5, 5].
 For target = 2, return 1 or 2.
@@ -41,7 +40,7 @@ Key point:  使用辅助栈改写递归程序，中序遍历没有前序遍历�
 
 ## Solution
 1.1 recursive
-
+~~~
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -122,7 +121,7 @@ public:
         return result;
     }
 };
-
+~~~
 
 ## Similar problems
 x
