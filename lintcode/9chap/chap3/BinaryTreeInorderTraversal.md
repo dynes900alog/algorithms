@@ -125,7 +125,8 @@ public:
 ~~~
 
 ## Similar problems
-x
+[Binary Tree Preorder Traversal](https://www.lintcode.com/problem/binary-tree-preorder-traversal/)  
+[Binary Tree Postorder Traversal](https://www.lintcode.com/problem/binary-tree-postorder-traversal)
 
 ## Tags
-Binary Tree
+Binary Tree Traversal
