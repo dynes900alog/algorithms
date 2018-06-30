@@ -16,12 +16,13 @@ return [1,3,2].
 
 Challenge
 Can you do it without recursion?
-~~~
+
 Example
 Given [1, 2, 2, 4, 5, 5].
 For target = 2, return 1 or 2.
 For target = 5, return 4 or 5.
 For target = 6, return -1.
+~~~
 
 ## Link
 [lintcode](https://www.lintcode.com/problem/binary-tree-inorder-traversal/description/)
@@ -71,9 +72,9 @@ private:
         }
     }
 };
-
+~~~
 1.2 iterative
-
+~~~
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
