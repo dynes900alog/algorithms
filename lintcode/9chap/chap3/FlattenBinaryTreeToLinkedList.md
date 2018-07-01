@@ -150,6 +150,50 @@ public:
 };
 ~~~
 
+1.3 Recursive Traverse
+~~~
+/**
+ * Definition of TreeNode:
+ * class TreeNode {
+ * public:
+ *     int val;
+ *     TreeNode *left, *right;
+ *     TreeNode(int val) {
+ *         this->val = val;
+ *         this->left = this->right = NULL;
+ *     }
+ * }
+ */
+
+class Solution {
+private:
+    TreeNode* lastNode = nullptr;
+public:
+    /**
+     * @param root: a TreeNode, the root of the binary tree
+     * @return: nothing
+     */
+    void flatten(TreeNode * root) {
+        traverseRecursive(root);
+    }
+    
+    void traverseRecursive(TreeNode* root) {
+        if (!root) {
+           return; 
+        }
+        
+        if (lastNode) {
+            lastNode->left = NULL;
+            lastNode->right = root;
+        }
+
+        lastNode = root;
+        TreeNode* right = root->right;
+        traverseRecursive(root->left);
+        traverseRecursive(right);
+    }
+};
+
 ## Similar problems
 [Convert Binary Search Tree to Doubly Linked List](https://www.lintcode.com/problem/convert-binary-search-tree-to-doubly-linked-list/)  
 
