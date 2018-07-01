@@ -193,9 +193,11 @@ public:
         traverseRecursive(right);
     }
 };
+~~~
 
 ## Similar problems
-[Convert Binary Search Tree to Doubly Linked List](https://www.lintcode.com/problem/convert-binary-search-tree-to-doubly-linked-list/)  
+[Convert Binary Search Tree to Doubly Linked List](https://www.lintcode.com/problem/convert-binary-search-tree-to-doubly-linked-list/)
+
 
 ## Tags
 Binary Tree Traversal
