@@ -27,14 +27,14 @@ Do it in-place without any extra memory.
 ~~~
 
 ## Link
-[lintcode](https://www.lintcode.com/problem/minimum-subtree)
+[lintcode](https://www.lintcode.com/problem/flatten-binary-tree-to-linked-list)
 
 ## Method
 1. divide and conquer 
 2. non recursive traverse
 3. recursive traverse (not recommend)
 
-Key point:  Divide & Conqer (1.function signature return last node 2. merge/connect nodes )
+Key point:  Divide & Conqer (递归三要素: 1.function signature, here return last node 2. merge/connect nodes 3. exit condition)
 
 ## Solution
 1.1 Divide and Conquer 
@@ -63,7 +63,7 @@ public:
         dfs(root);
     }
     
-    // step 1. return last node of flattened Linked List
+    // step 1. return the last node of flattened Linked List
     TreeNode* dfs(TreeNode* root) {
         // 3. exit
         if (!root) {
