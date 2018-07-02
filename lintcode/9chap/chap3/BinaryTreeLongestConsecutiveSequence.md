@@ -36,7 +36,7 @@ Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
 ## Method
 1. divide and conquer + traverse
 
-Key point: 定义函数返回值：返回以当前NODE为根的最大序列长度， 分治得到左右子树长度后，求当前最大长度，同时看是否要更新全局变量值
+Key point: 定义函数返回值：返回以当前NODE为根所开始（包含NODE)的最大序列长度， 分治得到左右子树长度后，求当前最大长度，同时看是否要更新全局变量值
 
 ## Solution
 1.1 Divide and Conquer + traversal
