@@ -64,6 +64,7 @@ public:
             return NULL;    
         }
         
+        // Any of A/B or (A is parent of B or reverse)
         if (root == A || root == B) {
             return root;
         }
@@ -71,6 +72,7 @@ public:
         TreeNode* left = lowestCommonAncestor(root->left, A, B);
         TreeNode* right = lowestCommonAncestor(root->right, A, B);
         
+        // find LCA
         if (left && right) {
             return root;
         }
@@ -83,6 +85,7 @@ public:
             return right;
         }
         
+        // not find
         return NULL;
     }
 };
