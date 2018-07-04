@@ -111,7 +111,7 @@ public:
 ~~~
 
 ## Similar problems
-[Binary Tree Longest Consecutive Sequence I](https://www.lintcode.com/problem/binary-tree-longest-consecutive-sequence/)
+[Binary Tree Longest Consecutive Sequence I](https://www.lintcode.com/problem/binary-tree-longest-consecutive-sequence/)  
 [Binary Tree Longest Consecutive Sequence III](https://www.lintcode.com/problem/binary-tree-longest-consecutive-sequence-iii/)
 
 
