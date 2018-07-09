@@ -165,8 +165,7 @@ public:
 ~~~
 
 ## Similar problems
-[Binary Tree Path Sum II](https://www.lintcode.com/problem/binary-tree-path-sum-ii)
-[Binary Tree Path Sum III](https://www.lintcode.com/problem/binary-tree-path-sum-iii)
+[Balanced Binary Tree](https://www.lintcode.com/problem/balanced-binary-tree)
 
 
 ## Tags
