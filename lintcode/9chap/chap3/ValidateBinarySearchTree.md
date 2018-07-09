@@ -28,8 +28,8 @@ The above binary tree is serialized as {2,1,4,#,#,3,5} (in level order).
 
 ## Method
 1. divide and conquer (The prefered method)
-Key point: 定义函数返回值
-2. Traverse (this method has issue if only one root node existing and value is INT_MIN/INT_MAX)
+Key point: 定义函数返回值, left/right's min/max value and state of BST
+2. Traverse (Not recommend: this method has issue if only one root node existing and value is INT_MIN/INT_MAX)
 Key point: with max/min value as input parameters
 3. Traverse (inOrder)
 Key point: 1. 对一个BST进行inorder traverse，必然会得到一个严格单调递增序列，否则则是invalid BST。 2. Inorder traverse时并不需要记录下整个访问过的序列，而只需要保存前一个访问的节点数值就可以了。
