@@ -4,6 +4,7 @@
 ## Ladder 2: Binary Search
 ## Ladder 3: Binary Tree & Divide Conquer
 ## Ladder 4: Breadth First Search
+## Ladder 5: Depth First Search
 ## Ladder 6: Linked List & Array
 ## Ladder 7: Two Pointers
 ## Ladder 8: Data Structure
