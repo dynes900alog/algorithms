@@ -31,12 +31,12 @@ Visually, the graph looks like the following:
 [lintcode](https://www.lintcode.com/problem/clone-graph/)
 
 ## Method
-1. BFS (Breadth First Search) 
-Key point: Need to copy both nodes and edges. 
-a. BFS to get all the nodes of current graph to clone nodes, set up mapping between old nodes and new nodes 
-b. Set up connection of nodes (copy edges).
+1. BFS (Breadth First Search)   
+Key point: Need to copy both nodes and edges.   
+1.)  BFS to get all the nodes of current graph to clone nodes, set up mapping between old nodes and new nodes  
+2.) Set up connection of nodes (copy edges).
 
-1.2 DFS (not recommend)
+2. DFS (not recommend)
 
 ## Solution
 1.1 BFS
@@ -111,12 +111,13 @@ public:
         return result;
     }
 };
+
 ~~~
 
 
 1.2 DFS
 ~~~
-// DFS 版本的解法
+// DFS 版本的解法 (copy from 9 chapters)
 class Solution {
 public:
     UndirectedGraphNode *clone(UndirectedGraphNode *node, map<int,UndirectedGraphNode*> &table)
