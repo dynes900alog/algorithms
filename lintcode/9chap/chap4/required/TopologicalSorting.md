@@ -7,10 +7,10 @@ For each directed edge A -> B in graph, A must before B in the order list.
 The first node in the order can be any node in the graph with no nodes direct to it.
 Find any topological order for the given graph.
 
-**Clarification**
+**Clarification**  
 [Learn more about representation of graphs](http://www.lintcode.com/help/graph)
 
-**Example**
+**Example**  
 For graph as follow:
 
 ![alt text](images.jpg)
@@ -30,7 +30,7 @@ Can you do it in both BFS and DFS?
 1. BFS (Breadth First Search)   
 Key point: indegree/outdegree concepts of directed graph - topological sorting is the fact that starting from node where "indegree = 0", update their neighbors by decreasing nodes' indegrees and continue following the nodes with "inedgrees = 0"
 
-2. DFS 
+2. DFS: DFS for nodes where indegree is 0
 
 ## Solution
 1.1 BFS
@@ -184,8 +184,8 @@ public:
 ~~~
 
 ## Similar problems
-[Course Schedule I](https://www.lintcode.com/problem/course-schedule/)
-[Course Schedule II](https://www.lintcode.com/problem/course-schedule-ii/)
+[Course Schedule I](https://www.lintcode.com/problem/course-schedule/)  
+[Course Schedule II](https://www.lintcode.com/problem/course-schedule-ii/)  
 [Sequence Reconstruction](https://www.lintcode.com/problem/sequence-reconstruction/)
 
 ## Tags
