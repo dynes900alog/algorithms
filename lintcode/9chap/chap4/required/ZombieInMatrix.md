@@ -32,6 +32,10 @@ structure Coordinate {
 
 class Solution {
 public:
+    int PEOPLE = 0;
+    int ZOMBIE = 1;
+    int WALL = 2;
+    
     /**
      * @param grid  a 2D integer grid
      * @return an integer
@@ -55,6 +59,7 @@ public:
 
         // BFS to traverse matrix (level order)
         while(!q.empty()) {
+            result++;
             int size = q.size();
             for (int i = 0; i < size; i++>) {
                 Coordinate pos = q.front();
@@ -63,19 +68,20 @@ public:
                 for(int j = 0; j < 4; j++>) {
                     int x = pos.x + deltaX[j];
                     int y = pos.y + deltaY[j];
-                    if(x < 0 || y < 0 || x >= row || y >= col) {
+                    Coordinate adj(x,y);
+                    if(!isPeople(adj, grid)) {
                         continue;
                     }
-                    if (grid[x][y] == 0) {
-                        grid[x][y] = 1;
-                        q.push(Coordinate(x,y));
-                    }  
+                    grid[x][y] = ZOMBIE;
+                    q.push(Coordinate(x,y));
                 }
             }
-            result++;
         }
 
-        // Check any case where can't mark
+        /*
+           Check any case where can't mark (another solution is to get number of  
+           people at first, people-- during BFS and check if "people == 0" here)  
+        */
         for(int i = 0; i < row; i++>) {
             for(int j = 0; j < col; j++>) {
                 if (grid[i][j] == 0)
@@ -97,6 +103,19 @@ public:
             }
         }
         return q;
+    }
+
+    bool isPeople(Coordinate coor, vector<vector<int>> &grid) {
+        int n = grid.length;
+        int m = grid[0].length;
+        
+        if (coor.x < 0 || coor.x >= n) {
+            return false;
+        }
+        if (coor.y < 0 || coor.y >= m) {
+            return false;
+        }
+        return (grid[coor.x][coor.y] == PEOPLE);
     }
 };    
 
