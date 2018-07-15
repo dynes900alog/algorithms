@@ -22,8 +22,7 @@ return 3.
 ```
 
 ## Link
-[lintcode](https://www.lintcode.com/problem/number-of-islands)
-[leetcode](http://www.leetcode.com)
+[lintcode](https://www.lintcode.com/problem/number-of-islands)  
 ## Method
 1. BFS (Breadth First Search)   
 Key point: 
