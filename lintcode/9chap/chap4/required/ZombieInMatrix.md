@@ -45,6 +45,9 @@ public:
         }
 
         int result = 0;
+        /* Or use 2D array (4x2)
+         vector<vector<int>> move = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+         */
         int deltaX = {1, 0, -1, 0};
         int deltaY = {0, 1,  0, -1};
         // enqueue all zombies 
