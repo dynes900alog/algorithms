@@ -1,257 +1,144 @@
-# 433. Number of Islands
+# 573. Build Post Office II
 
 ## Description
 ~~~
-Given a boolean 2D matrix, 0 is represented as the sea, 1 is represented as the island. If two 1 is adjacent, we consider them in the same island. We only consider up/down/left/right adjacent.
+Given a 2D grid, each cell is either a wall 2, an house 1 or empty 0 (the number zero, one, two), find a place to build a post office so that the sum of the distance from the post office to all the houses is smallest.
 
-Find the number of islands.
+Return the smallest sum of distance. Return -1 if it is not possible.
 ~~~
 
 **Example**
 ```
-Given graph:
+Given a grid:
 
-[
-  [1, 1, 0, 0, 0],
-  [0, 1, 0, 0, 1],
-  [0, 0, 0, 1, 1],
-  [0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 1]
-]
-return 3.
+0 1 0 0 0
+1 0 0 2 1
+0 1 0 0 0
+
+return 8, You can build at (1,1). (Placing a post office at (1,1), the distance that post office to all the house sum is smallest.)
 ```
+**Challenge**
+Solve this problem within O(n^3) time.
 
 ## Link
-[lintcode](https://www.lintcode.com/problem/number-of-islands)  
+[lintcode](https://www.lintcode.com/problem/build-post-office-ii/)  
 ## Method
 1. BFS (Breadth First Search)   
-Key point: 
+Key point: the number of houses are much smaller than empty cells. Use houses as the BFS start point to calculate distance to each empty cells.
 
-2. DFS (not recommend, if the matrix is big enough, it easily casues stack overflow. DFS depth too big - for example, matrix with all "1"s, depth = m*n)
-
-3. UF
 ## Solution
 1.1 BFS
 ~~~
-class Solution {
-public:
+enum celltype {
+    EMPTY = 0,
+    HOUSE = 1,
+    WALL
+};
+
 struct Coordinate {
-    int x;
-    int y;
-    Coordinate(int x1, int y1): x(x1), y(y1) {}
-    Coordinate(): x(0), y(0) {}
+    int x, y;
+    Coordinate(int _x, int _y) : x (_x), y(_y) {}
+    Coordinate() : x (0), y(0) {}
 };
 
-    /**
-     * @param grid: a boolean 2D matrix
-     * @return: an integer
-     */
-    int numIslands(vector<vector<bool>> &grid) {
-        // write your code here
-        // DFS
-        // return numIslandsDFS(grid);
-        return numIslandsBFS(grid);
-    }
-    
-    int numIslandsBFS(vector<vector<bool>> &grid) {
-        int answer = 0;
-        row = grid.size();
-        if (row == 0) {
-            return answer;
-        }
-        col = grid[0].size();
-        if (col == 0) {
-            return answer;
-        }
-
-        for(int i = 0; i < row; i++) {
-            for(int j = 0; j < col; j++) {
-                if(grid[i][j] == 0) {
-                    continue;
-                }
-                // mark all neighbors of the current node
-                markIslands(grid, i, j);
-                answer++;
-            }
-        }
-        
-        return answer;
-    }    
-    
-
-    // Use BFS to mark (set color) all its neighbors
-    void markIslands(vector<vector<bool>> &grid, int posX, int posY) {
-        if (!grid[posX][posY]) {
-            return;
-        }
-        
-        int deltX[] = {0, 1, -1, 0};
-        int deltY[] = {1, 0, 0, -1};
-        
-        queue<Coordinate> Q;
-       
-        Q.push(Coordinate(posX, posY));
-        grid[posX][posY] = 0;
-        
-        while(!Q.empty()) {
-            Coordinate element = Q.front();
-            Q.pop();
-            for(int i = 0; i < 4; i++) {
-                int x = element.x + deltX[i];
-                int y = element.y + deltY[i];
-                // out of bound
-                if (x < 0 || x >= row || y < 0 || y >= col) {
-                    continue;
-                }
-                if (grid[x][y] == 1) {
-                    grid[x][y] = 0;
-                    Q.push(Coordinate(x,y));
-                }
-            }
-        }
-    }
-};    
-
-~~~
-1.2 DFS
-~~~
 class Solution {
 public:
     /**
-     * @param grid: a boolean 2D matrix
-     * @return: an integer
+     * @param grid: a 2D grid
+     * @return: An integer
      */
-    int numIslands(vector<vector<bool>> &grid) {
+    int shortestDistance(vector<vector<int>> &grid) {
         // write your code here
-        int answer = 0;
         row = grid.size();
-        if (row == 0) {
-            return answer;
-        }
         col = grid[0].size();
-        if (col == 0) {
-            return answer;
+        if (row == 0 || col == 0) {
+            return -1;
         }
 
-        for(int i = 0; i < row; i++) {
-            for(int j = 0; j < col; j++) {
-                if (grid[i][j] == false) {
-                    continue;
-                }
-                answer++;
-                dfs(grid, i, j);
-            }
+        vector<Coordinate> houses = getCells(grid, HOUSE);
+        vector<Coordinate> empties = getCells(grid, EMPTY);
+        
+        vector<vector<int>> distances(row, vector<int>(col, 0));
+        vector<vector<int>> visitedTimes(row, vector<int>(col, 0));
+        
+        // each house by BFS to get distances to all empties
+        for (auto house : houses) {
+            bfs(house, grid, distances, visitedTimes);
         }
         
-        return answer;
+        // each empty position, get sum of all distance for each house
+        int shortest = INT_MAX;
+        for (auto empty : empties) {
+            // make sure all houses are reachable from empty position
+            if (visitedTimes[empty.x][empty.y] != houses.size()) {
+                continue;
+            }
+            shortest = min(shortest, distances[empty.x][empty.y]);
+        }
+
+        if (shortest == INT_MAX) {
+            return -1;
+        }
+        
+        return shortest;
     }
     
-    void dfs(vector<vector<bool>> & grid, int i, int j) {
-        if (i < 0 || i >= row || j < 0 || j >= col) {
-            return;
-        }
+    void bfs(Coordinate& house, vector<vector<int>> &grid, vector<vector<int>> &distances, vector<vector<int>> &visitedTimes) {
+        int deltaX[] = {1, 0, -1, 0};
+        int deltaY[] = {0, 1, 0, -1};
+        vector<vector<bool>> visited(row, vector<bool>(col, false));
         
-        if (grid[i][j] == true) {
-            grid[i][j] = false;
-            dfs(grid, i+1, j);
-            dfs(grid, i-1, j);
-            dfs(grid, i, j-1);
-            dfs(grid, i, j+1);
+        queue<Coordinate> q;
+        q.push(house);
+        int distance = 0;
+        
+        while(!q.empty()) {
+            distance++;
+            int size = q.size();
+            for(int k = 0; k < size; k++) {
+                Coordinate curPos = q.front();
+                q.pop();
+                for(int i = 0; i < 4; i++) {
+                    int x = curPos.x + deltaX[i];
+                    int y = curPos.y + deltaY[i];
+                    Coordinate curCoordinate(x,y);
+                    if (inBound(grid, curCoordinate) && !visited[x][y]) {
+                        q.push(curCoordinate);
+                        visitedTimes[x][y]++;
+                        distances[x][y] += distance;
+                        visited[x][y] = true;
+                    }
+                }
+            }
         }
     }
+
 private:
-    int row, col;
-};
-~~~
-
-1.3 Union and Find (Java code, not verified.)
-~~~
-class UnionFind { 
-
-    private int[] father = null;
-    private int count;
-
-    private int find(int x) {
-        if (father[x] == x) {
-            return x;
+    bool inBound(vector<vector<int>>& grid, Coordinate pos) {
+        if (pos.x < 0 || pos.x >= row || pos.y < 0 || pos.y >= col ) {
+            return false;
         }
-        return father[x] = find(father[x]);
-    }
-
-    public UnionFind(int n) {
-        // initialize your data structure here.
-        father = new int[n];
-        for (int i = 0; i < n; ++i) {
-            father[i] = i;
-        }
-    }
-
-    public void connect(int a, int b) {
-        // Write your code here
-        int root_a = find(a);
-        int root_b = find(b);
-        if (root_a != root_b) {
-            father[root_a] = root_b;
-            count --;
-        }
-    }
-        
-    public int query() {
-        // Write your code here
-        return count;
+        return (grid[pos.x][pos.y] == EMPTY);
     }
     
-    public void set_count(int total) {
-        count = total;
-    }
-}
-
-public class Solution {
-    /**
-     * @param grid a boolean 2D matrix
-     * @return an integer
-     */
-    public int numIslands(boolean[][] grid) {
-        int count = 0;
-        int n = grid.length;
-        if (n == 0)
-            return 0;
-        int m = grid[0].length;
-        if (m == 0)
-            return 0;
-        UnionFind union_find = new UnionFind(n * m);
-        
-        int total = 0;
-        for(int i = 0;i < grid.length; ++i)
-            for(int j = 0;j < grid[0].length; ++j)
-            if (grid[i][j])
-                total ++;
-    
-        union_find.set_count(total);
-        for(int i = 0;i < grid.length; ++i)
-            for(int j = 0;j < grid[0].length; ++j)
-            if (grid[i][j]) {
-                if (i > 0 && grid[i - 1][j]) {
-                    union_find.connect(i * m + j, (i - 1) * m + j);
-                }
-                if (i <  n - 1 && grid[i + 1][j]) {
-                    union_find.connect(i * m + j, (i + 1) * m + j);
-                }
-                if (j > 0 && grid[i][j - 1]) {
-                    union_find.connect(i * m + j, i * m + j - 1);
-                }
-                if (j < m - 1 && grid[i][j + 1]) {
-                    union_find.connect(i * m + j, i * m + j + 1);
+    vector<Coordinate> getCells(vector<vector<int>>& grid, celltype type) {
+        vector<Coordinate> result;
+        for(int i = 0; i < grid.size(); i++) {
+            for(int j = 0; j < grid[0].size(); j++) {
+                if (grid[i][j] == type) {
+                    result.push_back(Coordinate(i,j));
                 }
             }
-        return union_find.query();
+        }
+        return result;
     }
-}
+    int row, col;
+
+};
 ~~~
 
 ## Similar problems
-[Number of Islands II](https://www.lintcode.com/problem/number-of-islands-ii)
+[Build Post Office](https://www.lintcode.com/problem/build-post-office/)
 
 ## Tags
-Breadth First Search
-DFS and UF  
+Breadth First Search 
