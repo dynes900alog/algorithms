@@ -1,5 +1,5 @@
 # LintCode Ladder Basic (1 - 9)
-## [Ladder 1: strStr & Coding Style](./ladder/basic/chap1)
+## [Ladder 1: strStr & Coding Style](./basic/chap1)
 ## [Ladder 2: Binary Search](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap2)
 ## [Ladder 3: Binary Tree & Divide Conquer](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap3)
 ## [Ladder 4: Breadth First Search](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap4)
