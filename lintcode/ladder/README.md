@@ -9,7 +9,7 @@
 ## [Level 8: Data Structure](./basic/chap8)
 ## [Level 9: Dynamic Programming](./basic/chap9)
 
-# LintCode Ladder advance
+# LintCode Ladder advanced (1 -7)
 ## [level 1 Windows Moving](./advanced/level1)
 * [Kth Smallest Number in Sorted Matrix](./advanced/KthSmallestNumberInSortedMatrix.md)
 * [Minimum Size Subarray Sum](./advanced/MinimumSizeSubarraySum.md)
