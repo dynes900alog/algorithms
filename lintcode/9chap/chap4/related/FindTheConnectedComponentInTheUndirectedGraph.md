@@ -189,7 +189,8 @@ public class Solution {
 
 
 ## Similar problems
-[Knight Shortest Path](https://www.lintcode.com/problem/knight-shortest-path/)
+
 
 ## Tags
 Breadth First Search
+Union and FInd
