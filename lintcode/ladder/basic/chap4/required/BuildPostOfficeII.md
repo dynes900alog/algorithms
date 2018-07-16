@@ -17,7 +17,7 @@ Given a grid:
 
 return 8, You can build at (1,1). (Placing a post office at (1,1), the distance that post office to all the house sum is smallest.)
 ```
-**Challenge**
+**Challenge**  
 Solve this problem within O(n^3) time.
 
 ## Link
