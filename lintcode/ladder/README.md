@@ -1,16 +1,16 @@
 # LintCode Ladder Basic (1 - 9)
-## [Ladder 1: strStr & Coding Style](./basic/chap1)
-## [Ladder 2: Binary Search](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap2)
-## [Ladder 3: Binary Tree & Divide Conquer](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap3)
-## [Ladder 4: Breadth First Search](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap4)
-## [Ladder 5: Depth First Search](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap5)
-## [Ladder 6: Linked List & Array](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap6)
-## [Ladder 7: Two Pointers](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap7)
-## [Ladder 8: Data Structure](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap8)
-## [Ladder 9: Dynamic Programming](https://github.com/dynes900alog/algorithms/tree/master/lintcode/ladder/basic/chap9)
+## [Level 1: strStr & Coding Style](./basic/chap1)
+## [Level 2: Binary Search](./basic/chap2)
+## [Level 3: Binary Tree & Divide Conquer](./basic/chap3)
+## [Level 4: Breadth First Search](./basic/chap4)
+## [Level 5: Depth First Search](./basic/chap5)
+## [Level 6: Linked List & Array](./basic/chap6)
+## [Level 7: Two Pointers](./basic/chap7)
+## [Level 8: Data Structure](./basic/chap8)
+## [Level 9: Dynamic Programming](./basic/chap9)
 
 # LintCode Ladder advance
-## level 1 Windows Moving
+## [level 1 Windows Moving](./advanced/level1)
 * [Kth Smallest Number in Sorted Matrix](./advanced/KthSmallestNumberInSortedMatrix.md)
 * [Minimum Size Subarray Sum](./advanced/MinimumSizeSubarraySum.md)
 * [Longest Substring Without Repeating Characters](./advanced/LongestSubstringWithoutRepeatingCharacters.md)
@@ -23,7 +23,7 @@
 * [Minimum Window Substring](./advanced/MinimumWindowSubstring.md)
 * [Kth Largest Element](./advanced/KthLargestElement.md)
 
-## level 2 UnionFind & Trie
+## [level 2 UnionFind & Trie](./advanced/level2)
 * [Number of Islands](./advanced/NumberOfIslands.md)
 * [Number of Islands II](./advanced/NumberOfIslands2.md)
 * [Connecting Graph](./advanced/ConnectingGraph.java)
@@ -44,7 +44,7 @@
 * [Interval Sum](./advanced/IntervalSum.java)
 * [Interval Sum II](./advanced/IntervalSum2.java)
 
-## level 3 Heap & Stack
+## [level 3 Heap & Stack](./advanced/level3)
 * [Expression Expand](./java/ExpressionExpand.java)
 * [Trapping Rain Water](./java/TrappingRainWater.java)
 * [Trapping Rain Water II](./java/TrappingRainWater2.java)
@@ -67,7 +67,7 @@
 * [Expression Evaluation](./java/ExpressionEvaluation.java)
 * [The Skyline Problem](./java/TheSkylineProblem.java)
 
-## level 4 Binary Search + Sweep Line
+## [level 4 Binary Search + Sweep Line](./advanced/level4)
 * [Sqrt(x)](./java/Sqrt.java)
 * [Sqrt(x) II](./java/Sqrt2.java)
 * [Maximum Average Subarray II](./java/MaximumAverageSubarray2.java)
@@ -82,7 +82,7 @@
 * [Smallest Rectangle Enclosing Black Pixels](./java/SmallestRectangleEnclosingBlackPixels.java)
 * [Building Outline](./java/BuildingOutline.java)
 
-## level 5 Dynamic Problem I
+## [level 5 Dynamic Problem I](./advanced/level5)
 * [Longest Increasing Continuous Subsequence](./java/LongestIncreasingContinuousSubsequence.java)
 * [Longest Increasing Continuous subsequence II](./java/LongestIncreasingContinuousSubsequence2.java)
 * [Maximum Subarray](./java/MaximumSubarray.java)
@@ -108,7 +108,7 @@
 * [Best Time to Buy and Sell Stock with Cooldown](./java/BestTimetoBuyandSellStockwithCooldown.java)
 * [Best Time to Buy and Sell Stock with Transaction Fee](./java/BestTimetoBuyandSellStockwithTransactionFee.java)
 
-## level 6 Dynamic Problem II
+## [level 6 Dynamic Problem II](./advanced/level6)
 * [Stone Game](./java/StoneGame.java)
 * [Stone Game II](./java/StoneGame2.java)
 * [Edit Distance](./java/EditDistance.java)
@@ -132,7 +132,7 @@
 * [Coins in a Line III](./java/CoinsinaLine3.java)
 * [Combination Sum IV](./java/CombinationSum4.java)
 
-## level 7 Follow Up
+## [level 7 Follow Up](./advanced/level7)
 * [Flatten Binary Tree to Linked List](./java/FlattenBinaryTreetoLinkedList.java)
 * [Flatten List](./java/FlattenList.java)
 * [Subarray Sum](./java/SubarraySum.java)
