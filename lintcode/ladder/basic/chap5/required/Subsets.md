@@ -35,6 +35,9 @@ Key point: back tracking template
 key point: use "n bits" to represent all combinations([0, 2^n]). "1" means the index of nums should be selected, "0" not selected
 
 3. BFS
+key point: how to determine the neighbors in nums for a existing subset?   
+#1. sort nums   
+#2. The last element in subset less than nums[i])
 
 ## Solution
 1.1 DFS
@@ -113,7 +116,7 @@ public class Solution {
 }
 ~~~
 
-1.2 Bitwise
+1.2 Bitmap
 ~~~
 class Solution {
 public:
@@ -167,7 +170,7 @@ public:
         sort(nums.begin(), nums.end());
 
         vector<int> subset0;
-        queue<int> q;
+        queue<vector<int>> q;
         q.push(subset0);
 
         while(!q.empty()) {
@@ -178,14 +181,14 @@ public:
             for(int i = 0; i < nums.size(); i++) {
                 if (subset.size() == 0 || subset[subset.size() -1] < nums[i]) {
                     vector<int> nextSubset(subset);
-                    nextSubset.add(nums[i]);
+                    nextSubset.push_back(nums[i]);
                     q.push(nextSubset);
                 }
             }
         }
 
         return result;
-    }
+    }    
 };
 
 ~~~
