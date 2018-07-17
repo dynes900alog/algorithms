@@ -31,7 +31,10 @@ Can you do it in both recursively and iteratively?
 1. DFS 
 Key point: back tracking template 
 
-2. Bitmap
+2. Bitmap 
+key point: use "n bits" to represent all combinations([0, 2^n]). "1" means the index of nums should be selected, "0" not selected
+
+3. BFS
 
 ## Solution
 1.1 DFS
@@ -66,6 +69,48 @@ private:
     }
     
 };
+
+/* 
+Another way of DFS:
+使用组合类搜索的专用深度优先搜索算法。
+一层一层的决策每个数要不要放到最后的集合里。
+*/
+public class Solution {
+    /**
+     * @param nums: A set of numbers
+     * @return: A list of lists
+     */
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> results = new ArrayList<>();
+        Arrays.sort(nums);
+        dfs(nums, 0, new ArrayList<Integer>(), results);
+        return results;
+    }
+    
+    // 1. 递归的定义
+    // 以 subset 开头的，配上 nums 以 index 开始的数所有组合放到 results 里
+    private void dfs(int[] nums,
+                     int index,
+                     List<Integer> subset,
+                     List<List<Integer>> results) {
+        // 3. 递归的出口
+        if (index == nums.length) {
+            results.add(new ArrayList<Integer>(subset));
+            return;
+        }
+        
+        // 2. 递归的拆解
+        // (如何进入下一层)
+        
+        // 选了 nums[index]
+        subset.add(nums[index]);
+        dfs(nums, index + 1, subset, results);
+        
+        // 不选 nums[index]
+        subset.remove(subset.size() - 1);
+        dfs(nums, index + 1, subset, results);
+    }
+}
 ~~~
 
 1.2 Bitwise
@@ -108,9 +153,46 @@ private:
 };
 ~~~
 
+1.3 BFS
+~~~
+class Solution {
+public:
+    /**
+     * @param nums: A set of numbers
+     * @return: A list of lists
+     */
+    vector<vector<int>> subsets(vector<int> &nums) {
+        // write your code here
+        vector<vector<int>> result;
+        sort(nums.begin(), nums.end());
+
+        vector<int> subset0;
+        queue<int> q;
+        q.push(subset0);
+
+        while(!q.empty()) {
+            vector<int> subset = q.front();
+            q.pop();
+            result.push_back(subset);
+
+            for(int i = 0; i < nums.size(); i++) {
+                if (subset.size() == 0 || subset[subset.size() -1] < nums[i]) {
+                    vector<int> nextSubset(subset);
+                    nextSubset.add(nums[i]);
+                    q.push(nextSubset);
+                }
+            }
+        }
+
+        return result;
+    }
+};
+
+~~~
+
 ## Similar problems
 [SubsetII](https://lintcode.com/problem/subsets-ii/)
 
 ## Tags
-DFS
+DFS  
 Bitwise
