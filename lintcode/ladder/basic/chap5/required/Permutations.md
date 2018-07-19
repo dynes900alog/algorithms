@@ -101,36 +101,40 @@ private:
 1.2 DFS (no recursion, not verfied)
 ~~~
 // Non-Recursion
+// version 1: Non-Recursion
 class Solution {
+public:
     /**
      * @param nums: A list of integers.
      * @return: A list of permutations.
      */
-    public List<List<Integer>> permute(int[] nums) {
-        ArrayList<List<Integer>> permutations
-             = new ArrayList<List<Integer>>();
-        if (nums == null) {
-            
-            return permutations;
-        }
-
-        if (nums.length == 0) {
-            permutations.add(new ArrayList<Integer>());
+    vector<vector<int> > permute(vector<int> nums) {
+        vector<vector<int> > permutations;
+        if (nums.size() == 0) {
+            permutations.push_back(vector<int>());
             return permutations;
         }
         
-        int n = nums.length;
-        ArrayList<Integer> stack = new ArrayList<Integer>();
+        int n = nums.size();
+        vector<int> stack;
+        bool inStack[n];
+        for (int i = 0; i < n; i++) {
+            inStack[i] = false;
+        }
         
-        stack.add(-1);
+        stack.push_back(-1);
         while (stack.size() != 0) {
-            Integer last = stack.get(stack.size() - 1);
-            stack.remove(stack.size() - 1);
+            // pop the last 
+            int last = stack[stack.size() - 1];
+            stack.pop_back();
+            if (last != -1) {
+                inStack[last] = false;
+            }
             
-            // increase the last number
+            // increase the last, find the next bigger & avaiable number
             int next = -1;
             for (int i = last + 1; i < n; i++) {
-                if (!stack.contains(i)) {
+                if (inStack[i] == false) {
                     next = i;
                     break;
                 }
@@ -140,25 +144,26 @@ class Solution {
             }
             
             // generate the next permutation
-            stack.add(next);
+            stack.push_back(next);
+            inStack[next] = true;
             for (int i = 0; i < n; i++) {
-                if (!stack.contains(i)) {
-                    stack.add(i);
+                if (!inStack[i]) {
+                    stack.push_back(i);
+                    inStack[i] = true;
                 }
             }
             
-            // copy to permutations set
-            ArrayList<Integer> permutation = new ArrayList<Integer>();
+            // generate real permutation from index
+            vector<int> permutation;
             for (int i = 0; i < n; i++) {
-                permutation.add(nums[stack.get(i)]);
+                permutation.push_back(nums[stack[i]]);
             }
-            permutations.add(permutation);
+            permutations.push_back(permutation);
         }
         
         return permutations;
     }
-}
-
+};
 ~~~
 
 ## Similar problems
