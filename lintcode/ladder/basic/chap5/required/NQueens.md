@@ -36,6 +36,7 @@ Can you do it  without recursion?
 [lintcode](https://lintcode.com/problem/n-queens/)
 
 ## Method
+Permuation problem
 1. DFS by recursion  
 key point: check diagnol positions  
 
@@ -60,6 +61,7 @@ public:
         return result;
     }
 
+    // Permutation template
     void dfsHelper(vector<vector<string>>& result, vector<int> &cols, int queens) {
         if (cols.size() == queens) {
             result.push_back(convertResult(cols));
@@ -67,11 +69,12 @@ public:
         }
         
         for(int i = 0; i < queens; i++) {
-            if (isValidPosition(cols, i)) {
-                cols.push_back(i);
-                dfsHelper(result, cols, queens);
-                cols.pop_back();
-            }
+            if (!isValidPosition(cols, i)) {
+                continue;
+            }    
+            cols.push_back(i);
+            dfsHelper(result, cols, queens);
+            cols.pop_back();
         }
     }
     
@@ -185,9 +188,9 @@ public:
                 return false;
             }
             
-            // diagnol positions
-            if (row -i == col - cols[i] ||
-                row -i == cols[i] - col) {
+            // diagnol positions: "x + y" and "x - y"
+            if (row - col ==  i - cols[i] ||
+                row + col == i + cols[i]) {
                 return false;
             }
         }
@@ -213,3 +216,4 @@ public:
 
 ## Tags
 DFS  
+Permutation
