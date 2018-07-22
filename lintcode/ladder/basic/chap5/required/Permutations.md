@@ -35,6 +35,8 @@ Key point: back tracking template
 3. BFS
 key point: how to determine the neighbors in nums for a existing subset?   
 
+4. Next Permutation
+
 ## Solution
 1.1 DFS
 ~~~
@@ -166,8 +168,73 @@ public:
 };
 ~~~
 
+1.3 BFS
+
+1.4 Non recursion: next permutation
+~~~
+class Solution {
+public:
+    /*
+     * @param nums: A list of integers.
+     * @return: A list of permutations.
+     */
+    vector<vector<int>> permute(vector<int> &nums) {
+        // write your code here
+        vector<vector<int>> answer;
+        if (nums.size() == 0) {
+            answer.push_back(vector<int>());
+            return answer;
+        }
+        
+        sort(nums.begin(), nums.end());
+        
+        for(;;) {
+            answer.push_back(nums);
+            // reverse find the first position where nums[i] < num[i+1]
+            int i = nums.size() - 2;
+            while(i >= 0 && nums[i] >= nums[i+1]) {
+                i--;
+            }
+        
+            if (i < 0) {
+                return answer;
+            }
+        
+            //reverse find the first position where nums[j] > nums[i]
+            int j = nums.size() - 1;
+            for(j = nums.size() - 1; j > i; j--) {
+                if (nums[j] > nums[i]) {
+                    break;
+                }
+            }    
+        
+            // switch nums[i] and nums[j]
+            nums[i] ^= nums[j];
+            nums[j] ^= nums[i];
+            nums[i] ^= nums[j];
+        
+            reverse(nums.begin() + i + 1, nums.end() -1);
+        }
+        
+        return answer;
+    }
+private:
+    void reverse(vector<int>::iterator i1, vector<int>::iterator i2) {
+        while(i1 < i2) {
+            *i1 ^= *i2;
+            *i2 ^= *i1;
+            *i1 ^= *i2;
+            i1++;
+            i2--;
+        }
+    }
+};
+~~~
+
 ## Similar problems
 [Permutations II](https://www.lintcode.com/problem/permutations-ii/)
 
 ## Tags
 DFS  
+BFS  
+Next Permutation  
