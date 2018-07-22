@@ -100,14 +100,17 @@ public:
         if (start == end) {
             return 1;
         }
+
+        int len = start.size();
         
-        if (start.size() == 0 || start.size() != end.size()) {
+        if (len == 0 || len != end.size()) {
             return 0;
         }
         
         queue<string> q;
         q.push(start);
-        int len = start.size();
+        dict.erase(start);
+
         int minLength = 1;
         
         while(!q.empty()) {
@@ -130,6 +133,7 @@ public:
                         word[j] = c;
                         if (dict.find(word) != dict.end()) {
                             q.push(word);
+                            // mark as visited
                             dict.erase(word);
                         }
                     }
