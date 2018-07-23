@@ -6,9 +6,9 @@
 | BFS | [433. Number of Islands](https://www.lintcode.com/problem/number-of-islands) | Easy | [433. Number of Islands Easy](./required/NumberOfIslands.md) |
 | BFS | [69. Binary Tree Level Order Traversal](https://www.lintcode.com/problem/binary-tree-level-order-traversal) | Easy | [69. Binary Tree Level Order Traversal Easy](./required/BinaryTreeLevelOrderTraversal.md) |
 | BFS | [618. Search Graph Nodes](https://www.lintcode.com/problem/search-graph-nodes) | Medium | [618. Search Graph Nodes Medium](./required/SearchGraphNodes.md) |
-| BFS | [598. Zombie in Matrix](https://www.lintcode.com/problem/zombie-in-matrix) | Medium | [598. Zombie in Matrix Medium](./required/ZombieInMatrix.md) |
-| BFS | [611. Knight Shortest Path](http://www.lintcode.com/problem/knight-shortest-path) | Medium | [611. Knight Shortest Path Medium](./required/KnightShortestPath.md) |
 | BFS | [616. Course Schedule II](http://www.lintcode.com/problem/course-schedule-ii) | Medium | [616. Course Schedule II Medium](./required/CourseScheduleII.md) |
+| BFS | [611. Knight Shortest Path](http://www.lintcode.com/problem/knight-shortest-path) | Medium | [611. Knight Shortest Path Medium](./required/KnightShortestPath.md) |
+| BFS | [598. Zombie in Matrix](https://www.lintcode.com/problem/zombie-in-matrix) | Medium | [598. Zombie in Matrix Medium](./required/ZombieInMatrix.md) |
 | BFS | [178. Graph Valid Tree](http://www.lintcode.com/problem/graph-valid-tree) | Medium | [178. Graph Valid Tree Medium](h./required/GraphValidTree.md) |
 | BFS | [137. Clone Graph](http://www.lintcode.com/problem/clone-graph) | Medium | [137. Clone Graph Medium](./required/CloneGraph.md) |
 | BFS | [7. Binary Tree Serialization](http://www.lintcode.com/problem/binary-tree-serialization) | Medium | [7. Binary Tree Serialization Medium](./required/BinaryTreeSerialization.md) |
