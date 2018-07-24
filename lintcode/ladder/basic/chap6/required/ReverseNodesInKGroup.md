@@ -23,9 +23,12 @@ For k = 3, you should return: 3->2->1->4->5
 [lintcode](https://lintcode.com/problem/reverse-nodes-in-k-group/)
 
 ## Method
-1. Reverse K nodes each round:  head->n(1)->n(2)->n(3)->...n(k)->n(k+1)  ========> head->n(k)->n(k-1)->......->n(3)->n(2)->n(1)->n(k+1)
-Key point: Reverse Linked List nodes by number - how to use dummy node to avoid head node change?
-##1. dummy node as the extra head to avoid head changes during manipulating (dummy.next is always the new head)
+1. Reverse K nodes each round:  
+head->n(1)->n(2)->n(3)->......->n(k-1)->n(k)->n(k+1)  
+========>   
+head->n(k)->n(k-1)->......->n(3)->n(2)->n(1)->n(k+1)  
+Key point: Reverse Linked List nodes by number - how to use dummy node to avoid head node change?  
+##1. dummy node as the extra head to avoid head changes during manipulating (dummy.next is always the new head)  
 ##2. subfunction signature: return the next part of the dummy head node so we can continue doing reverse next k : n(1), which is original head->next
 
 
@@ -101,7 +104,8 @@ public:
 ~~~
 
 ## Similar problems
-[Reverse Linked List](https://lintcode.com/problem/combination-sum-ii)
-
+[Reverse Linked List](https://lintcode.com/problem/reverse-linked-list/)  
+[Reverse Linked List](https://lintcode.com/problem/reverse-linked-list-ii/)  
+[Swap Nodes in Paris](https://lintcode.com/problem/swap-nodes-in-pairs/)  
 ## Tags
 Linked List & Array 
