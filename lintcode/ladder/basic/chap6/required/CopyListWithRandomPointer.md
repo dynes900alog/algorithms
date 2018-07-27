@@ -16,9 +16,9 @@ Could you solve it with O(1) space?
 [lintcode](https://www.lintcode.com/problem/copy-list-with-random-pointer/)
 
 ## Method
-1. Clone singly linked list with 1-to-1 old/new nodes mapping 
-Key point: It's easy to clone singly linked list. How to maintain the mapping relation ship between original and new node?
-
+*  Clone singly linked list with 1-to-1 old/new nodes mapping by Hash Map
+*  Same way but without using extra space O(1)
+    * Key point: It's easy to clone singly linked list. How to maintain the mapping relation ship between original and new node?
 
 ## Solution
 1.1 
