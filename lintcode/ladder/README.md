@@ -155,3 +155,8 @@
 * [Zigzag Iterator II](./java/ZigzagIterator2.java)
 * [Build Post Office](./java/BuildPostOffice.java)
 * [Build Post Office II](./java/BuildPostOffice2.java)
+
+# [Bit Manipulation](./bitwise)
+# [Database](./database)
+* [SQL](https://github.com/kamyu104/LeetCode#sql)
+# [Design](./design)
