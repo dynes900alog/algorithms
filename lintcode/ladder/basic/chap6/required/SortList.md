@@ -19,9 +19,13 @@ Solve it by merge sort & quick sort separately.
 
 ## Method
 * Merge Sort: Use slow/fast pointer to get middle positiion  
-
-* Quick Sort: Partition + Connect (use dummy node)
-
+Time:O(nlongn)  
+Space: O(1) for linked list (Merge - no need with extra space for linked list; for array, it's O(n))
+* Quick Sort: Partition + Connect (use dummy node) 
+    * key point: partion 2-way or 3-way, not swap nodes as array because missing previous node info
+Time: O(nlogn)  
+Space: O(1)
+* Heap Sort - not pratical for linked list (lef, right child postion 2*n, 2*n+1)
 ## Solution
 1.1 
 ~~~
