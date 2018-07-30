@@ -15,7 +15,8 @@ After merge, A will be filled as [1, 2, 3, 4, 5]
 ```
 **Challenge**
 
-How can you optimize your algorithm if one array is very large and the other is very small?
+How can you optimize your algorithm if one array is very large and the other is very small?  
+(insert sort by binary search to get insert postion of the small array elements)
 
 ## Link
 [lintcode](https://www.lintcode.com/problem/merge-sorted-array/)
