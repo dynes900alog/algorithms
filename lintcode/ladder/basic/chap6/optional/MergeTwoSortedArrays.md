@@ -17,6 +17,7 @@ return [1,2,2,3,4,4,5,6]
 **Challenge**
 
 How can you optimize your algorithm if one array is very large and the other is very small?
+(insert sort by binary search to get insert postion of the small array elements)
 
 ## Link
 [lintcode](https://www.lintcode.com/problem/merge-two-sorted-arrays/)
