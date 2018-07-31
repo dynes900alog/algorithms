@@ -1,74 +1,38 @@
-# 6. Merge Two Sorted Array
+# 548. Intersection of Two Arrays II
 
 ## Description
-~~~
-Merge two given sorted integer array A and B into a new sorted integer array.
 
-~~~
+Given two arrays, write a function to compute their intersection.
+
+```
+Each element in the result should appear as many times as it shows in both arrays.
+The result can be in any order.
+```
+
+
 
 **Example**
 ```
-A=[1,2,3,4]
-
-B=[2,4,5,6]
-
-return [1,2,2,3,4,4,5,6]
+Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2, 2].
 ```
 **Challenge**
 
-How can you optimize your algorithm if one array is very large and the other is very small?
-(insert sort by binary search to get insert postion of the small array elements)
+* What if the given array is already sorted? How would you optimize your algorithm?
+* What if nums1's size is small compared to num2's size? Which algorithm is better?
+* What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
 
 ## Link
-[lintcode](https://www.lintcode.com/problem/merge-two-sorted-arrays/)
+[lintcode](https://www.lintcode.com/problem/intersection-of-two-arrays-ii/)
 
 ## Method
-* Two Pointers
+* 
 
 ## Solution
 1.1 
 ~~~
-class Solution {
-public:
-    /**
-     * @param A: sorted integer array A
-     * @param B: sorted integer array B
-     * @return: A new sorted integer array
-     */
-    vector<int> mergeSortedArray(vector<int> &A, vector<int> &B) {
-        // write your code here
-        int lenA = A.size();
-        int lenB = B.size();
-        vector<int> result;
-        
-        int i = 0;
-        int j = 0;
-        while(i < lenA && j < lenB) {
-            if (A[i] <= B[j]) {
-                result.push_back(A[i]);
-                i++;
-            }
-            else {
-                result.push_back(B[j]);
-                j++;
-            }
-        }
-        
-        while (i < lenA) {
-            result.push_back(A[i++]);
-        }
-        
-        while (j < lenB) {
-            result.push_back(B[j++]);
-        }
-        
-        return result;
-    }
-};
 ~~~
 
 ## Similar problems
-[Merge Two Sorted Lists](https://www.lintcode.com/problem/merge-two-sorted-lists/)  
-[Merge Sorted Array](https://www.lintcode.com/problem/merge-sorted-array/)
+[Intersection of Two Arrays](https://www.lintcode.com/problem/intersection-of-two-arrays/)  
 ## Tags
 Array
