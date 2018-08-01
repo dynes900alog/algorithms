@@ -142,9 +142,13 @@ public:
 };
 ~~~
 ## Similar problems
-[Two Sum - Closest to target](https://lintcode.com/problem/two-sum-closest-to-target/)  
-[Two Sum - Unique pairs](https://lintcode.com/problem/two-sum-unique-pairs/)  
+[Two Sum](https://lintcode.com/problem/two-sum/)  
 [Two Sum II - Input array is sorted](https://lintcode.com/problem/two-sum-input-array-is-sorted/)   
+[Two Sum II - Less than or equal to target](https://lintcode.com/problem/two-sum-less-than-or-equal-to-target/)   
+[Two Sum - Unique pairs](https://lintcode.com/problem/two-sum-unique-pairs/)  
+[Two Sum - Closest to target](https://lintcode.com/problem/two-sum-closest-to-target/)  
+[Two Sum - Difference equals to target](https://lintcode.com/problem/two-sum-difference-equals-to-target/)  
+[Two Sum - Greater than target](https://lintcode.com/problem/two-sum-greater-than-target/)  
 [Two Sum III- Data structure design](https://lintcode.com/problem/two-sum-data-structure-design/)  
 [3Sum](https://lintcode.com/problem/3sum/)
 
