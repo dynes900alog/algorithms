@@ -24,7 +24,7 @@ Do it in O(nlongn) time complexity
 * Two Pointers
 
 ## Solution
-1.1 Hash Table
+1.1 Two Pointers
 ~~~
 class Solution {
 public:
