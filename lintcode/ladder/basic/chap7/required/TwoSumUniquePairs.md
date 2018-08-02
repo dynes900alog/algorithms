@@ -11,18 +11,12 @@ Given nums = [1,1,2,45,46,46], target = 47 return 2
 1 + 46 = 47 2 + 45 = 47
 ```
 
-**Challenge**  
-Either of the following solutions are acceptable:
-
-* O(n) Space, O(nlogn) Time
-* O(n) Space, O(n) Time
-
 ## Link
 [lintcode](http://www.lintcode.com/en/problem/two-sum-unique-pairs/)
 
 ## Method
-* Hash Table
-  * key point : Hash Table to save <value, count>
+* Two Pointers
+  * key point : how to avoid duplicated pairs? (compare previous neighbor)
 
 ## Solution
 1.1 Hash Table
@@ -41,7 +35,7 @@ public:
         }
  
         sort(nums.begin(), nums.end());
-        
+
         int i = 0, j = nums.size() - 1;
 
         int result = 0;
