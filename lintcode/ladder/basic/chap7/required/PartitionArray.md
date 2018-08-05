@@ -36,16 +36,14 @@ public:
      */
     int partitionArray(vector<int> &nums, int k) {
         // write your code here
-        int i = 0, j = 0;
+        int i = 0, j = -1;
         int length = nums.size();
         
         // j: the first position where nums[j] >= k;
         for(i = 0; i < length; i++) {
-            if (nums[i] >= k) {
-                continue;
-            }
-            if (i < length) {
-                swap(nums[i], nums[j++]);
+            // find the postion where it shouldn't  in right part
+            if (nums[i] < k) {
+                swap(nums[i], nums[++j]);
             }    
         }
         return j;
@@ -66,12 +64,12 @@ public:
                 int temp = nums[i];
                 nums[i] = nums[j];
                 nums[j] = temp;
-                i++;
-                j--;
+                //i++; j--;
             }
         }
-        // in the case where i == j and nums[i] < k
+        // in the case where i == nums.size() - 1 and nums[i] < k
         if (nums[i] < k) {
+            // All [0 ... size) < k
             return i+1;
         }
 
