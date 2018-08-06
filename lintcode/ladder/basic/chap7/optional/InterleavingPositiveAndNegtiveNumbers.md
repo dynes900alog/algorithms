@@ -75,6 +75,6 @@ public:
 ~~~
 ## Similar problems
 [Partition Array](https://www.lintcode.com/problem/partition-array)  
-
+[Sort Letters by Case](https://www.lintcode.com/problem/sort-letters-by-case/)
 ## Tags
 Two Pointers  
