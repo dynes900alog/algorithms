@@ -18,7 +18,7 @@ If the count of numbers is bigger than 2^32, can your code work properly?
 * Binary Search
 
 ## Solution
-1.1 Doubly Linked List + Hash
+1.1 Bianry Search (Template, without using template, be careful left/right choose based on mide and post processing)
 ~~~
 class Solution {
 public:
