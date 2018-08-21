@@ -47,15 +47,15 @@ public:
      */
     int findFirstBadVersion(int n) {
         // write your code here
-        unsigned int start = 1, end = n;
+        int start = 1, end = n;
         
         while (start + 1  < end) {
-            unsigned int mid = start + (end - start) / 2;
+            int mid = start + (end - start) / 2;
             if (SVNRepo::isBadVersion(mid)) {
                 end = mid;
             }
             else {
-                start = mid;  // don't use "mid + 1" to avoid signed integer overflow
+                start = mid;  // don't use "mid + 1" (avoid signed integer overflow for "start + 1")
             }
         }
         
