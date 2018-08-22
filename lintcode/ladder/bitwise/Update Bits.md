@@ -23,12 +23,40 @@ Minimum number of operations?
 
 ## Method
 * Bit manipulate
-  * key point : 
+  * key point : how to generate mask bits from i ->j ? mask = (1 << (j+1)) - (1 << i)
 
 ## Solution
 1.1 Bit manipulate
 ~~~
+class Solution {
+public:
+    /**
+     * @param n: An integer
+     * @param m: An integer
+     * @param i: A bit position
+     * @param j: A bit position
+     * @return: An integer
+     */
+    int updateBits(int n, int m, int i, int j) {
+        // write your code here
+        int mask = 0;
+        // Note if j is 31, 1<<j out of range
+        if (j < 31) {
+            mask = ~((1 << (j+1)) - (1 << i));
+        }
+        else {
+            mask = (1 << i) - 1;
+        }
 
+        // clear the content in n from i to j
+        int result = n & mask;
+        
+        // set m in n
+        result = result | (m << i);
+        
+        return result;
+    }
+};
 ~~~
 ## Similar problems
 [Rotate Bits - Left](https://www.lintcode.com/problem/rotate-bits-left/)  
