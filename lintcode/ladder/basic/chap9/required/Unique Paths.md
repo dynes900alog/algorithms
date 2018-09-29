@@ -16,7 +16,11 @@ Given m = 4 and n = 5, return 35.
 [lintcode](https://www.lintcode.com/problem/unique-paths/)
 
 ## Method
-* DP - Bottom Up
+* DP - Bottom Up  
+  * state: dp[x][y]从起点到x,y的路径数
+  * function: (研究倒数第一部) dp[x][y] = dp[x-1][y] + dp[x][y-1]
+  * initialize: dp[0][i] = 1, dp[i][0] = 1
+  * answer dp[n-1][m-1] 
 
 ## Solution
 1.1 DP 
@@ -92,6 +96,7 @@ public:
 ~~~
 
 ## Similar problems
+[Unique Paths II](https://www.lintcode.com/problem/unique-paths-ii/)  
 [Unique Paths III](https://www.lintcode.com/problem/unique-paths-iii/)  
 
 ## Tags
