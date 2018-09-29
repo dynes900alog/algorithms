@@ -4,7 +4,7 @@
 |         Topic         |                                                 Link                                                | Difficulty |                                                                                                 Solution                                                                                                 |
 |:---------------------:|:--------------------------------------------------------------------------------------------------------:|:------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | DP | [109. Triangle](https://www.lintcode.com/problem/triangle) | Easy | [109. Triangle Easy](./required/Triangle.md) |
-| DP | [110. Minimum Path Sum](https://www.lintcode.com/problem/minimum-path-sum) | Easy | [110. Minimum Path Sum Easy](./required/Minimum Path Sum.md) |
+| DP | [110. Minimum Path Sum](https://www.lintcode.com/problem/minimum-path-sum) | Easy | [110. Minimum Path Sum Easy](./required/Minimum%20Path%20Sum.md) |
 | DP | [111. Climbing Stairs](https://www.lintcode.com/problem/climbing-stairs) | Easy | [111. Climbing Stairs Easy](./required/Climbing Stairs.md) |
 | DP | [114. Unique Paths](http://www.lintcode.com/problem/unique-paths) | Easy | [114. Unique Paths Easy](./required/Unique Paths.md) |
 | DP | [115. Unique Paths II](http://www.lintcode.com/problem/unique-paths-ii) | Easy | [115. Unique Paths II Easy](./required/Unique Paths II.md) |
