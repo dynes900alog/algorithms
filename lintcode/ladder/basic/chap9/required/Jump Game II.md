@@ -54,6 +54,40 @@ public:
 };
 ~~~
 
+1.2 Greedy
+~~~
+class Solution {
+public:
+    /**
+     * @param A: A list of integers
+     * @return: An integer
+     */
+    int jump(vector<int> &A) {
+        // write your code here
+        int size = A.size();
+        
+        int jumps = 0;
+        int start = 0, end = 0;
+        int farthest;
+        
+        while (end < size -1) {
+            jumps++;
+
+            // update start and end (farthest that can reach currently)
+            farthest = end;
+            for(int i = start; i <= end; i++) {
+                if (A[i] + i >= farthest) {
+                    farthest = A[i] + i;
+                }
+            }
+            start = end;
+            end = farthest;
+        }
+        
+        return jumps;
+    }
+};
+~~~
 ## Similar problems
 [Jump Game](https://www.lintcode.com/problem/jump-game/)  
 [Rogue Knight Sven](https://www.lintcode.com/problem/rogue-knight-sven/)  
