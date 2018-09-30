@@ -80,7 +80,31 @@ public:
                 }
             }
         }
-        
+        /* Can be compacted as the following code:
+        for (int i = 0; i < rows; i++) {
+            for(int j = 0; j < cols; j++) {
+                // obstacle, set to 0 (no ways to reach)
+                if (obstacleGrid[i][j] == 1)
+                {
+                    dp[i][j] = 0;
+                }
+                else {
+                    dp[i][j] = 0;
+                    if (i==0 && j==0) {
+                        dp[i][j] = 1;
+                    }
+                    if (j != 0) {
+                        dp[i][j] += dp[i][j-1];
+                    }
+                    if (i != 0) {
+                        dp[i][j] += dp[i -1][j];
+                    }
+                }
+            }
+        }
+        */
+
+
         return dp[row-1][col-1];
     }
 };
