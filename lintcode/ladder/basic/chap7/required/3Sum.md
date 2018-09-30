@@ -1,68 +1,76 @@
-# 507. Two Sum III - Data structure design
+# 57. 3Sum
 
 ## Description
 
-Design and implement a TwoSum class. It should support the following operations: add and find.
-
-add - Add the number to an internal data structure.
-find - Find if there exists any pair of numbers which sum is equal to the value.
-
+Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+```
+Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c)
+The solution set must not contain duplicate triplets.
+```
 **Example**
+For example, given array S = {-1 0 1 2 -1 -4}, A solution set is:
 ```
-add(1); add(3); add(5);
-find(4) // return true
-find(7) // return false
+(-1, 0, 1)
+(-1, -1, 2)
 ```
-
-**Challenge**  
-Either of the following solutions are acceptable:
-
-* O(n) Space, O(nlogn) Time
-* O(n) Space, O(n) Time
-
 ## Link
-[lintcode](https://lintcode.com/problem/two-sum-iii-data-structure-design/)
+[lintcode](https://www.lintcode.com/problem/3sum/)
 
 ## Method
-* Hash Table
-  * key point : Hash Table to save <value, count>
-
+* Two Pointers: time O(n^2) space O(1)
+  * key point : convert into 2Sum issue
+* Hash Table: time O(n^2) and space O(n)
 ## Solution
-1.1 Hash Table
+1.1 Two pointers
 ~~~
-class TwoSum {
-private:
-    // key = number, value = count
-    unordered_map<int, int> hashtable;    
+class Solution {
 public:
-    /*
-     * @param number: An integer
-     * @return: nothing
+    /**
+     * @param numbers: Give an array numbers of n integer
+     * @return: Find all unique triplets in the array which gives the sum of zero.
      */
-    void add(int number) {
+    vector<vector<int>> threeSum(vector<int> &numbers) {
         // write your code here
-        hashtable[number]++;
-    }
-
-    /*
-     * @param value: An integer
-     * @return: Find if there exists any pair of numbers which sum is equal to the value.
-     */
-    bool find(int value) {
-        // write your code here
-        for(unordered_map<int, int>::iterator it = hashtable.begin(); it != hashtable.end(); it++) {
-            int res = value - it->first;
-            if (hashtable.find(res) == hashtable.end()) {
+        vector<vector<int>> result;
+        if (numbers.size() <= 2) {
+            return result;
+        }
+        
+        sort(numbers.begin(), numbers.end(), std::less<int>());
+        
+        for(int i = 0; i < numbers.size() - 2; i++) {
+            if (i > 0 && numbers[i] == numbers[i -1]) {
                 continue;
             }
+
+            // b + c = - a;
+            int target = -numbers[i];
             
-            if (res != it->first || 
-                (res == it->first && (it->second > 1))) {
-                    return true;
+            // 2 sum
+            int j = i + 1, k = numbers.size() - 1;
+            while (j < k) {
+                if (numbers[j] + numbers[k] == target) {
+                    vector<int> oneanswer = {numbers[i], numbers[j], numbers[k]};
+                    result.push_back(oneanswer);
+                    j++; k--;
+                    // skip duplicates
+                    while(j < k && numbers[j] == numbers[j-1]) {
+                        j++;
+                    }
+                    while(j < k && numbers[k] == numbers[k+1]) {
+                        k--;
+                    }
+                }
+                else if (numbers[j] + numbers[k] < target) {
+                    j++;
+                }
+                else {
+                    k--;
+                }
             }
         }
-
-        return false;
+        
+        return result;
     }
 };
 ~~~
