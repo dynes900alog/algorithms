@@ -16,7 +16,8 @@ Given nums = [1,2,4,8], return [1,2,4,8]
 [lintcode](https://www.lintcode.com/problem/largest-divisible-subsequence/)
 
 ## Method
-* DP 
+* DP with sorting first
+  * Sorting the array so that we only need to compare one element to determine divisible
   * state: dp[x] - the size of divisible elements where the last element is nums[x]
   * function: dp[x] = max(dp[y] + 1), y < x and nums[x] % nums[y] == 0, for all y:[0, x)
   * initialize: dp[x] = 1, use paths[x] to record the path 
