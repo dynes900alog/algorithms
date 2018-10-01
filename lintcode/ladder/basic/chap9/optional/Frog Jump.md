@@ -1,149 +1,94 @@
-# 76. Longest Increasing Subsequence
+# 622. Frog Jump
 
 ## Description
-Given a sequence of integers, find the longest increasing subsequence (LIS).
+A frog is crossing a river. The river is divided into x units and at each unit there may or may not exist a stone. The frog can jump on a stone, but it must not jump into the water.  
+Given a list of stones' positions (in units) in sorted ascending order, determine if the frog is able to cross the river by landing on the last stone. Initially, the frog is on the first stone and assume the first jump must be 1 unit.  
+If the frog's last jump was k units, then its next jump must be either k - 1, k, or k + 1 units. Note that the frog can only jump in the forward direction.
 
-You code should return the length of the LIS.
-
-**Clarification**  
-What's the definition of longest increasing subsequence?
-
-* The longest increasing subsequence problem is to find a subsequence of a given sequence in which the subsequence's elements are in sorted order, lowest to highest, and in which the subsequence is as long as possible. This subsequence is not necessarily contiguous, or unique.
-
-* https://en.wikipedia.org/wiki/Longest_increasing_subsequence
+```
+* The number of stones is ≥ 2 and is < 1100.
+* Each stone's position will be a non-negative integer < 2^31.
+* The first stone's position is always 0.
+```
 
 **Example**  
 ```
-For [5, 4, 1, 2, 3], the LIS is [1, 2, 3], return 3
-For [4, 2, 4, 5, 3, 7], the LIS is [2, 4, 5, 7], return 4
+Given stones = [0,1,3,5,6,8,12,17]
+
+There are a total of 8 stones.
+The first stone at the 0th unit, second stone at the 1st unit,
+third stone at the 3rd unit, and so on...
+The last stone at the 17th unit.
+
+Return true. The frog can jump to the last stone by jumping 
+1 unit to the 2nd stone, then 2 units to the 3rd stone, then 
+2 units to the 4th stone, then 3 units to the 6th stone, 
+4 units to the 7th stone, and 5 units to the 8th stone.
+
+Given stones = `[0,1,2,3,4,8,9,11]`
+
+Return false. There is no way to jump to the last stone as 
+the gap between the 5th and 6th stone is too large.
 ```
 
-**Challenge**  
-Time complexity O(n^2) or O(nlogn)
-
 ## Link
-[lintcode](https://www.lintcode.com/problem/longest-increasing-subsequence/)
+[lintcode](https://www.lintcode.com/problem/frog-jump/)
 
 ## Method
-* DP - Time Complexity is O(n^2)  
-  * state: dp[x] - the longest subsequence where the last element is nums[x]
-  * function (Top Down): dp[x] = max(dp[y] + 1), y < x and nums[y] < nums[x], for all y:[0, x)
+* DP - Time Complexity is O(n)  
+  * state: dp[x] (unordered_map<int, unordered_set<int>>) - at position x, all the possible steps from any previous stone (代表目前的点能由前面的点跳几步得到，这些步数的集合)
+  * function (Bottom Up): dp[x] = (dp[y]), y < x and for all possible steps in dp[y], dp[y]+1/dp[y]/dp[y]-1 can reach to x, y:[0, x)
   * initialize: dp[x] = 1
-  * answer max(dp[x]), x:[0,size) 
+  * answer dp[size].empty() is false/true 
 
-* Optimized by Binary Search O(nlogn)
-  * 思路是先建立一个空的dp数组，然后开始遍历原数组，对于每一个遍历到的数字，我们用二分查找法在dp数组找第一个不小于它的数字，如果这个数字不存在，那么直接在dp数组后面加上遍历到的数字，如果存在，则将这个数字更新为当前遍历到的数字，最后返回dp数字的长度即可，特别注意的是dp数组的值可能不是一个真实的LIS. 比如若输入数组nums为{4, 2， 4， 5， 3， 7}，那么算完后的dp数组为{2， 3， 5， 7}，可以发现它不是一个原数组的LIS，只是长度相等而已，千万要注意这点。
-* Use STL lower_bound to replace binary search
 ## Solution
-1.1 DP - Top Down O(n^2)
+1.1 DP - Bottom Up O(n)
 ~~~
 class Solution {
 public:
     /**
-     * @param nums: An integer array
-     * @return: The length of LIS (longest increasing subsequence)
+     * @param stones: a list of stones' positions in sorted ascending order
+     * @return: true if the frog is able to cross the river or false
      */
-    int longestIncreasingSubsequence(vector<int> &nums) {
+    bool canCross(vector<int> &stones) {
         // write your code here
-        int size = nums.size();
-        if (size <= 0) {
-            return 0;
+        int size = stones.size();
+        if (size <= 0 || stones[0] != 0) {
+            return false;
         }
         
-        vector<int> dp(size, 1);
-        int maxSubSeq = 0;
-
-        for(int i = 0; i < size; i++) {
-            dp[i] = 1;
-            for(int j = 0; j < i; j++) {
-                if (nums[i] > nums[j]) {
-                    dp[i] = max(dp[j] + 1, dp[i]);
+        // dp[i] : all possible steps set from previous stones
+        unordered_map<int, unordered_set<int>>dp;
+        for(auto position : stones) {
+            dp[position] = unordered_set<int>();    
+        }
+        
+        dp[0].insert(1);
+        
+        // for each stone : bottom up to update others  dp[stone+k] = k where k is all steps in dp[stone]
+        for(auto stone : stones) {
+            // for all steps (k, k > 0) in dp[stone], bottom up to update 
+            for(auto k : dp[stone]) {
+                if (k - 1 > 0 && dp.find(stone + k -1) != dp.end()) {
+                    dp[stone+k-1].insert(k-1);
+                }
+                if (dp.find(stone + k) != dp.end()) {
+                    dp[stone+k].insert(k);
+                }
+                if (dp.find(stone + k + 1) != dp.end()) {
+                    dp[stone+k+1].insert(k+1);
                 }
             }
-            maxSubSeq = max(maxSubSeq, dp[i]);
         }
         
-        return maxSubSeq;
-    }
-};
-~~~
-
-1.2 DP - optimized to O(nlogn) by binary search
-~~~
-class Solution {
-public:
-    /**
-     * @param nums: An integer array
-     * @return: The length of LIS (longest increasing subsequence)
-     */
-    int longestIncreasingSubsequence(vector<int> &nums) {
-        // write your code here
-        int size = nums.size();
-        if (size <= 0) {
-            return 0;
-        }
-        
-        vector<int> dp(size, INT_MAX);
-
-        for(int i = 0; i < size; i++) {
-            int index = binarySearch(dp, nums[i]);
-            dp[index] = nums[i];
-        }
-        
-        // return the max position where dp[i] != INT_MAX
-        for(int i = size - 1; i >= 0; i--) {
-            if (dp[i] != INT_MAX) {
-                return i + 1;
-            }
-        }
-        
-        return 0;
-    }
-    
-    
-    // find the first position in nums[pos] where nums[pos] >= target
-    int binarySearch(vector<int> &nums, int target) {
-        int start = 0, end = nums.size() - 1;
-        while (start + 1 < end) {
-            int mid = start + (end - start) / 2;
-            if (nums[mid] < target) {
-                start = mid;
-            }
-            else {
-                end = mid;
-            }
-        }
-        
-        if (nums[start] >= target) {
-            return start;
-        }
-        
-        return end;
-    }
-};
-~~~
-
-1.3 STL lower_bound   
-Note: similar to binary search, STL lower_bound返回数组中第一个不小于指定值的元素
-~~~
-class Solution {
-public:
-    int lengthOfLIS(vector<int>& nums) {
-        vector<int> v;
-        for (auto a : nums) {
-            auto it = lower_bound(v.begin(), v.end(), a);
-            if (it == v.end()) v.push_back(a);
-            else *it = a;
-        }
-　　　　　 　return v.size();
+        return (!dp[stones.back()].empty());
     }
 };
 ~~~
 
 
 ## Similar problems
-[Russian Doll Envelopes](https://www.lintcode.com/problem/russian-doll-envelopes/)  
-[Frog Jump](https://www.lintcode.com/problem/frog-jump/)  
+[Longest Increasing Subsequence](https://www.lintcode.com/problem/longest-increasing-subsequence/))  
 
 ## Tags
 Dynamic Programming 接龙型  
