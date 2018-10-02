@@ -10,7 +10,7 @@
 | DFS | [153. Combination Sum II](http://www.lintcode.com/problem/combination-sum-ii) | Medium | [153. Combination Sum II Medium](./required/CombinationSum II.md) |
 | DFS | [135. Combination Sum](http://www.lintcode.com/problem/combination-sum) | Medium | [135. Combination Sum Medium](./required/CombinationSum.md) |
 | DFS | [18. Subsets II](http://www.lintcode.com/problem/subsets-ii) | Medium | [18. Subsets II Medium](./required/SubsetsII.md) |
-| DFS | [16. Permutations II](http://www.lintcode.com/problem/permutations-ii) | Medium | [16. Permutations II Medium](./required/Permutations II.md) |
+| DFS | [16. Permutations II](http://www.lintcode.com/problem/permutations-ii) | Medium | [16. Permutations II Medium](./required/PermutationsII.md) |
 | DFS | [582. Word Break II](http://www.lintcode.com/problem/word-break-ii) | Hard | [582. WordBreak II Hard](./required/WordBreakII.md) |
 | DFS | [121. Word Ladder II](http://www.lintcode.com/problem/word-ladder-ii) | Hard | [121. Word Ladder II Hard](./required/WordLadderII.md) |
 | DFS | [120. Word Ladder](http://www.lintcode.com/problem/word-ladder) | Medium | [120. Word Ladder Medium](./required/WordLadder.md) |
