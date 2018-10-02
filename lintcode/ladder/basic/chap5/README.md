@@ -7,7 +7,7 @@
 | DFS | [575. Expression Expand](https://www.lintcode.com/problem/expression-expand) | Medium | [596. Expression Expand Medium](./required/ExpressionExpand.md) |
 | DFS | [528. Flatten Nested List Iterator](https://www.lintcode.com/problem/flatten-nested-list-iterator) | Medium | [528. Flatten Nested ListIterator Medium](./required/FlattenNestedListIterator.md) |
 | DFS | [136. Palindrome Partitioning](https://www.lintcode.com/problem/palindrome-partitioning) | Medium | [136. Palindrome Partitioning Medium](./required/PalindromePartitioning.md) |
-| DFS | [153. Combination Sum II](http://www.lintcode.com/problem/combination-sum-ii) | Medium | [153. Combination Sum II Medium](./required/CombinationSum II.md) |
+| DFS | [153. Combination Sum II](http://www.lintcode.com/problem/combination-sum-ii) | Medium | [153. Combination Sum II Medium](./required/CombinationSumII.md) |
 | DFS | [135. Combination Sum](http://www.lintcode.com/problem/combination-sum) | Medium | [135. Combination Sum Medium](./required/CombinationSum.md) |
 | DFS | [18. Subsets II](http://www.lintcode.com/problem/subsets-ii) | Medium | [18. Subsets II Medium](./required/SubsetsII.md) |
 | DFS | [16. Permutations II](http://www.lintcode.com/problem/permutations-ii) | Medium | [16. Permutations II Medium](./required/PermutationsII.md) |
