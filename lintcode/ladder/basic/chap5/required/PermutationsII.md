@@ -113,7 +113,8 @@ private:
         }
         
         for (int i = pos; i < nums.size(); i++) {
-            // skip any repeated elements: note the following method is not working!
+            // skip any repeated elements: note the following method is not working becasue it's not sorted any more after swapping!
+            // need to use "canSwap()" to check all previous elements!
             if ((i == pos) || (nums[pos] != nums[i] && nums[i] != nums[i-1])) {
             //if (canSwap(nums, pos, i)) {
                 // make a move
