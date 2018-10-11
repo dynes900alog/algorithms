@@ -28,8 +28,8 @@ Can you do it in both recursively and iteratively?
 
 ## Method
 1. DFS by recursion
-Key point: back tracking template 
-
+   *  Key point: back tracking template. The recursion tree:  
+    ![alt text](permutations.png)
 2. DFS without recursion
 
 3. BFS
@@ -98,7 +98,6 @@ private:
     
 };
 ~~~
-
 
 1.2 DFS (no recursion, not verfied)
 ~~~
