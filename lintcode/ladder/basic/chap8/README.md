@@ -5,11 +5,11 @@
 |:---------------------:|:--------------------------------------------------------------------------------------------------------:|:------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | DS | [128. Hash Function](https://www.lintcode.com/problem/hash-function) | Easy | [128. Hash Function (NA)](./required/Hash%20Function.md) |
 | DS | [613. High Five](https://www.lintcode.com/problem/high-five) | Medium | [613. High Five(NA)](./required/High%20Five.md) |
-| DS | [612. K Closest Points](https://www.lintcode.com/problem/k-closest-points) | Medium | [612. K Closest Points.md](./required/K%20 Closest%20Points.md) |
-| DS | [606. Kth Largest Element II](http://www.lintcode.com/problem/kth-largest-element-ii) | Medium | [606. Kth Largest Element II.md](./required/Kth%20Largest%20Element%20II.md) |
+| DS | [612. K Closest Points](https://www.lintcode.com/problem/k-closest-points) | Medium | [612. K Closest Points(NA)](./required/K%20Closest%20Points.md) |
+| DS | [606. Kth Largest Element II](http://www.lintcode.com/problem/kth-largest-element-ii) | Medium | [606. Kth Largest Element II (NA)](./required/Kth%20Largest%20Element%20II.md) |
 | DS | [544. Top K Largest Numbers](http://www.lintcode.com/problem/top-k-largest-numbers) | Medium | [544. Top K Largest Numbers.md](./required/Top%20k%20Largest%20Numbers.md) |
 | DS | [129. Rehashing](https://www.lintcode.com/problem/rehashing) | Medium | [129. Rehashing.md](./required/Rehashing.md) |
-| DS | [104. Merge k Sorted Lists](http://www.lintcode.com/problem/merge-k-sorted-lists) | Medium | [104. Merge k Sorted Lists.md](./required/Merge%20k%20Sorted%20Lists.md) |
+| DS | [104. Merge k Sorted Lists](http://www.lintcode.com/problem/merge-k-sorted-lists) | Medium | [104. Merge k Sorted Lists (NA)](./required/Merge%20k%20Sorted%20Lists.md) |
 | DS | [4. Ugly Number II](http://www.lintcode.com/problem/ugly-number-ii) | Medium | [4. Ugly Number II.md](./required/Ugly%20Number%20II.md) |
 | DS | [594. strStr II](http://www.lintcode.com/problem/strstr-ii) | Hard | [594. strStr II(NA)](./required/strStr%20II.md) |
 | DS | [134. LRU Cache](http://www.lintcode.com/problem/lru-cache) | Hard | [134. LRU Cache.md](./required/LRU%20Cache.md) |
