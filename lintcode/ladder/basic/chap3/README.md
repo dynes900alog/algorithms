@@ -27,7 +27,7 @@
 | BT & DC | [475. Binary Tree Maximum Path Sum II Medium](http://www.lintcode.com/problem/binary-tree-maximum-path-sum-ii) | Medium | [475. Binary Tree Maximum Path Sum II Medium.md](./optional/BinaryTreeMaximumPathSum2.md) |
 | BT & DC | [448. Inorder Successor in Binary Search Tree Medium](http://www.lintcode.com/problem/inorder-successor-in-binary-search-tree) | Medium | [448. Inorder Successor in Binary Search Tree Medium.md](./optional/InorderSuccessorInBinarySearchTree.md) |
 | BT & DC | [378. Convert Binary Search Tree to Doubly Linked List Medium](http://www.lintcode.com/problem/convert-binary-search-tree-to-doubly-linked-list) | Medium | [378. Convert Binary Search Tree to Doubly Linked List Medium.md](./optional/ConvertBinarySearchTreeToDoublyLinkedList.md) |
-| BT & DC | [472. Binary Tree Path Sum III  Hard](http://www.lintcode.com/problem/binary-tree-path-sum-iii) | Hard | [472. Binary Tree Path Sum III  Hard.md]./optional/BinaryTreePathSum3.md) |
+| BT & DC | [472. Binary Tree Path Sum III  Hard](http://www.lintcode.com/problem/binary-tree-path-sum-iii) | Hard | [472. Binary Tree Path Sum III  Hard.md](./optional/BinaryTreePathSum3.md) |
 
 ### Related
 |         Topic         |                                                 Link                                                | Difficulty |                                                                                                 Solution                                                                                                 |
