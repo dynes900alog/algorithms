@@ -38,5 +38,5 @@
 | Binary Search | [160. Find Minimum in Rotated Sorted Array II](http://www.lintcode.com/problem/find-minimum-in-rotated-sorted-array-ii) |  Medium   | [160. Find Minimum in Rotated Sorted Array II.java](https://github.com/chendddong/LintCode/blob/master/JiuZhang%20Algorithm%20Ladder/2%20-%20Binary%20Search/Related/160.%20Find%20Minimum%20in%20Rotated%20Sorted%20Array%20II.java) |
 | Binary Search | [63. Search in Rotated Sorted Array II](http://www.lintcode.com/problem/search-in-rotated-sorted-array-ii) |  Medium   | [63. Search in Rotated Sorted Array II.java](https://github.com/chendddong/LintCode/blob/master/JiuZhang%20Algorithm%20Ladder/2%20-%20Binary%20Search/Related/63.%20Search%20in%20Rotated%20Sorted%20Array%20II.java) |
 | Binary Search | [437. Copy Books](http://www.lintcode.com/problem/copy-books)|  Hard   | [437. Copy Books.java](https://github.com/chendddong/LintCode/blob/master/JiuZhang%20Algorithm%20Ladder/2%20-%20Binary%20Search/Related/437.%20Copy%20Books.java) |
-| Binary Search | [183. Wood Cut](http://www.lintcode.com/problem/wood-cut)|  Hard   | [183. Wood Cut.java](.\WoodCut.md) |
+| Binary Search | [183. Wood Cut](http://www.lintcode.com/problem/wood-cut)|  Hard   | [183. Wood Cut.md](./WoodCut.md) |
 
