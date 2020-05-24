@@ -3,7 +3,7 @@
 ### Required
 |         Topic         |                                                 Link                                                | Difficulty |                                                                                                 Solution                                                                                                 |
 |:---------------------:|:--------------------------------------------------------------------------------------------------------:|:------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| DS | [128. Hash Function](https://www.lintcode.com/problem/hash-function) | Easy | [128. Hash Function.md](NA) |
+| DS | [128. Hash Function](https://www.lintcode.com/problem/hash-function) | Easy | [128. Hash Function (NA)](./required/Hash%20Function.md) |
 | DS | [613. High Five](https://www.lintcode.com/problem/high-five) | Medium | [613. High Five.md](./required/High%20Five.md) |
 | DS | [612. K Closest Points](https://www.lintcode.com/problem/k-closest-points) | Medium | [612. K Closest Points.md](./required/K%20 Closest%20Points.md) |
 | DS | [606. Kth Largest Element II](http://www.lintcode.com/problem/kth-largest-element-ii) | Medium | [606. Kth Largest Element II.md](./required/Kth%20Largest%20Element%20II.md) |
