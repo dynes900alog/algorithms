@@ -8,11 +8,11 @@
 | BT & DC | [595. Binary Tree Longest Consecutive Sequence Easy](http://www.lintcode.com/problem/binary-tree-longest-consecutive-sequence) | Easy | [595. BinaryTree Longest Consecutive Sequence Easy.md](./required/BinaryTreeLongestConsecutiveSequence.md) |
 | BT & DC | [376. Binary Tree Path Sum Easy](http://www.lintcode.com/problem/binary-tree-path-sum) | Easy | [376. Binary Tree Path Sum Easy.md](./required/BinaryTreePathSum.md) |
 | BT & DC | [480. Binary Tree Paths Easy](http://www.lintcode.com/problem/binary-tree-paths) | Easy | [480. Binary Tree Paths Easy.md](./required/BinaryTreePaths.md) |
-| BT & DC | [453. Flatten Binary Tree to Linked List Easy](http://www.lintcode.com/problem/flatten-binary-tree-to-linked-list) | Easy | [453. Flatten Binary Tree to Linked List Easy.md](./required/FlattenBinaryTreetoLinkedList.md) |
+| BT & DC | [453. Flatten Binary Tree to Linked List Easy](http://www.lintcode.com/problem/flatten-binary-tree-to-linked-list) | Easy | [453. Flatten Binary Tree to Linked List Easy.md](./required/FlattenBinaryTreeToLinkedList.md) |
 | BT & DC | [97. Maximum Depth of Binary Tree Easy](http://www.lintcode.com/problem/maximum-depth-of-binary-tree) | Easy | [97. Maximum Depth of Binary Tree Easy.md](./required/MaximumDepthOfBinaryTree.md) |
 | BT & DC | [93. Balanced Binary Tree Easy](http://www.lintcode.com/problem/balanced-binary-tree) | Easy | [93. Balanced Binary Tree Easy.md](./required/BalancedBinaryTree.md) |
 | BT & DC | [578. Lowest Common Ancestor III Medium](http://www.lintcode.com/problem/lowest-common-ancestor-iii) | Medium | [578. Lowest Common Ancestor III Medium.md](./required/LowestCommonAncestorIII.md) |
-| BT & DC | [95. Validate Binary Search Tree Medium](http://www.lintcode.com/problem/validate-binary-search-tree) | Medium | [95. Validate Binary Search Tree Medium.md](./required/ValidateBinarySearchTreeMedium.md) |
+| BT & DC | [95. Validate Binary Search Tree Medium](http://www.lintcode.com/problem/validate-binary-search-tree) | Medium | [95. Validate Binary Search Tree Medium.md](./required/ValidateBinarySearchTree.md) |
 
 ### Optional
 |         Topic         |                                                 Link                                                | Difficulty |                                                                                                 Solution                                                                                                 |
